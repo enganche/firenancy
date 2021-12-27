@@ -6,6 +6,13 @@ div {
   font-size: larger;
 }
 
+input {
+  padding: 15px;
+  font-size: larger;
+  border-radius: 10px;
+  opacity: 80%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
