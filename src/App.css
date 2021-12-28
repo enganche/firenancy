@@ -6,11 +6,19 @@ div {
   font-size: larger;
 }
 
-input {
+input, button {
   padding: 15px;
   font-size: larger;
-  border-radius: 10px;
   opacity: 80%;
+  border-color: #61dafb;
+}
+
+input {
+  border-radius: 10px 0 0 10px;
+}
+
+button {
+  border-radius: 0 10px 10px 0;
 }
 
 .App-logo {
