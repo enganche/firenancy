@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function Display() {
     const [rate, setRate] = useState(0);
-    const [money, setMoney] = useState(1);
+    const [money, setMoney] = useState(0);
     const [result, setResult] = useState(0);
 
     useEffect(() => {
@@ -19,11 +19,16 @@ export default function Display() {
         setRate(response.data.USD);
     }
 
-    function calculate(event) {
-        setMoney(validate(event.target.value) * parseFloat(rate));
+    function submit(event) {
+        if (event.key === 'Enter') {
+            setResult(Math.round(validate(event.target.value) * parseFloat(rate)));
+        }
     }
-    function reversedCalculate(event) {
-        setMoney(validate(event.target.value) / parseFloat(rate));
+
+    function reversedSubmit(event) {
+        if (event.key === 'Enter') {
+            setMoney(Math.round(validate(event.target.value) / parseFloat(rate)));
+        }
     }
 
     function validate(value) {
@@ -44,34 +49,29 @@ export default function Display() {
         }
     }
 
-    function submit(event) {
-        if (event.key === "Enter") {
-            setResult(money);
-        }
-    }
-
     return (
         <div>
             <h1>App đổi tiền</h1>
             <p>From VND to USD</p>
             <input 
             type = "text"
-            className = "current"
             placeholder = "Nhập số tiền"
-            onChange = {calculate}
+            value = {money}
+            onChange = {event => setMoney(event.target.value)}
             onKeyPress={submit}
             />
-            <button>VND</button>
-            <h4> = </h4>
+            <button onClick = {submit} >VND</button>
+            <h2> = </h2>
             <input 
             type = "text"
-            className = "current"
-            value={Math.round(result)}
-            onChange = {reversedCalculate}
-            onKeyPress={submit}
+            value={result}
+            onChange = {event => setResult(event.target.value)}
+            onKeyPress={reversedSubmit}
             />
-            <button>USD</button>
-            <p>Số tiền chính xác {result}$</p>
+            <button oneClick = {reversedSubmit} >USD</button>
+            <p>Tỉ lệ {rate}</p>
+            <p>1 VND đổi được {rate} USD</p>
+            <p>1 USD đổi được {1 / rate} VND</p>
         </div>
     );
 }
