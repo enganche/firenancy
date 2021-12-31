@@ -1,6 +1,26 @@
 .App {
   text-align: center;
-  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+}
+
+nav {
+  display: block;
+}
+
+ul {
+  background-color: aliceblue;
+  float: right;
+}
+li {
+  display: inline;
+  padding: 10px;
+}
+li a {
+  color: #282c34;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: darkgray;
 }
 
 div {
