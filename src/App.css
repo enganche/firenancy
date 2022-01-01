@@ -33,11 +33,11 @@ input, button {
   border-color: #61dafb;
 }
 
-input {
+input.exchange {
   border-radius: 10px 0 0 10px;
 }
 
-button {
+button.exchange {
   border-radius: 0 10px 10px 0;
 }
 

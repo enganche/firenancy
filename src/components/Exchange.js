@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { validate }from '../process';
 
 export default function Exchange() {
     const [rate, setRate] = useState(0);
@@ -21,60 +22,37 @@ export default function Exchange() {
 
     function submit(event) {
         if (event.key === 'Enter') {
-            setResult(Math.round(validate(event.target.value) * parseFloat(rate)));
+            setResult(Math.round(validate(event.target.value) * rate));
         }
     }
 
     function reversedSubmit(event) {
         if (event.key === 'Enter') {
-            setMoney(Math.round(validate(event.target.value) / parseFloat(rate)));
+            setMoney(Math.round(validate(event.target.value) / rate));
         }
-    }
-
-    function validate(value) {
-        if (!isNaN(value)) {
-            return parseFloat(value);
-        }
-        if (value.includes('k')) {
-            return parseFloat(value.replace('k', '000'));
-        }
-        if (value.includes(' lít')) {
-            return parseFloat(value.replace(' lít', '000'));
-        }
-        if (value.includes(' củ')) {
-            return parseFloat(value.replace(' củ', '000000'));
-        }
-        if (value.includes('m')) {
-            return parseFloat(value.replace('m', '000000'));
-        }
-        /*
-        if(value.includes(',')) {
-            return parseFloat(value.slice(',').join(''));
-        }
-        */
-        alert("Nhập sai!");
-        return 0;
     }
 
     return (
         <div>
             <p>From VND to USD</p>
             <input 
+            className = 'exchange'
             type = "text"
             placeholder = "Nhập số tiền"
             value = {money}
             onChange = {event => setMoney(event.target.value)}
-            onKeyPress={submit}
+            onKeyPress = {submit}
             />
-            <button onClick = {submit} >VND</button>
+            <button className = 'exchange' onClick = {submit} >VND</button>
             <h2> = </h2>
             <input 
+            className = 'exchange'
             type = "text"
-            value={result}
+            value = {result}
             onChange = {event => setResult(event.target.value)}
-            onKeyPress={reversedSubmit}
+            onKeyPress = {reversedSubmit}
             />
-            <button oneClick = {reversedSubmit} >USD</button>
+            <button className = 'exchange' oneClick = {reversedSubmit} >USD</button>
             <p>Tỉ lệ {rate}</p>
             <p>1 VND đổi được {rate} USD</p>
             <p>1 USD đổi được {1 / rate} VND</p>
