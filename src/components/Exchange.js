@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Display() {
+export default function Exchange() {
     const [rate, setRate] = useState(0);
-    const [money, setMoney] = useState(0);
+    const [money, setMoney] = useState();
     const [result, setResult] = useState(0);
 
     useEffect(() => {
@@ -38,20 +38,26 @@ export default function Display() {
         if (value.includes('k')) {
             return parseFloat(value.replace('k', '000'));
         }
+        if (value.includes(' lít')) {
+            return parseFloat(value.replace(' lít', '000'));
+        }
         if (value.includes(' củ')) {
             return parseFloat(value.replace(' củ', '000000'));
         }
         if (value.includes('m')) {
             return parseFloat(value.replace('m', '000000'));
         }
+        /*
         if(value.includes(',')) {
             return parseFloat(value.slice(',').join(''));
         }
+        */
+        alert("Nhập sai!");
+        return 0;
     }
 
     return (
         <div>
-            <h1>App đổi tiền</h1>
             <p>From VND to USD</p>
             <input 
             type = "text"

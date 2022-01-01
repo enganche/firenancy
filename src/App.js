@@ -1,5 +1,7 @@
-import Display from './components/Display';
+import Home from './components/Home';
+import Exchange from './components/Exchange';
 import Interest from './components/Interest';
+import About from './components/About';
 //import { useState } from 'react';
 import {
   BrowserRouter,
@@ -15,15 +17,17 @@ function App() {
         <BrowserRouter>
         <nav>
           <ul className='navbar'>
-            <li><a>Rate</a></li>
-            <li><Link to="/">Exchange</Link></li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to="/exchange">Exchange</Link></li>
             <li><Link to="/interest">Interest</Link></li>
-            <li><a>About</a></li>
+            <li><Link to="/about">About</Link></li>
           </ul>   
         </nav>
           <Routes>
-            <Route path="/" element={<Display />} />
-            <Route path="interest" element={<Interest />} />
+            <Route path = '/' element = {<Home />} />
+            <Route path="/exchange" element={<Exchange />} />
+            <Route path="/interest" element={<Interest />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </BrowserRouter>
       </div>
