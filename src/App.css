@@ -87,3 +87,20 @@ button.interest {
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+    font-size: small;
+  }
+
+  input {
+    width: 50%;
+    font-size: smaller;
+  }
+
+  button {
+    width: 25%;
+    font-size: smaller;
+  }
+}
