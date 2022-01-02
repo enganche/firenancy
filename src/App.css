@@ -41,6 +41,18 @@ button.exchange {
   border-radius: 0 10px 10px 0;
 }
 
+input.interest {
+  border-radius: 10px;
+  width: 70%;
+  margin: 10px;
+}
+
+button.interest {
+  border-radius: 10px;
+  width: 30%;
+  margin: 10px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
