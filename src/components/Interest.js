@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { validate } from "../process";
+import { validate, processResult } from "../process";
 
 export default function Interest() {
     const [currentMoney, setCurrentMoney] = useState();
@@ -7,14 +7,13 @@ export default function Interest() {
     const [term, setTerm] = useState();
     const [finalMoney, setFinalMoney] = useState(0);
 
-    function calculate() {
-        let final = validate(currentMoney) * Math.pow(term, rate);
-        setFinalMoney(final);
+    function simpleCalculate() {
+        setFinalMoney(validate(currentMoney) * Math.pow(term, rate));
     }
-
+    
     return (
         <div>
-            <h1>Test</h1>
+            <h1>Tính lãi đơn</h1>
             <input
             className = 'interest'
             type = 'text'
@@ -36,9 +35,8 @@ export default function Interest() {
             value = {term}
             onChange = {event => setTerm(event.target.value)}
             />
-            <button className = 'interest' onClick={calculate}>Tính lãi đơn</button>
-            <button className = 'interest' onClick={calculate}>Tính lãi kép</button>
-            <p>{finalMoney}</p>
+            <button className = 'interest' onClick={simpleCalculate}>Tính lãi</button>
+            <p>{processResult(Math.round(finalMoney))}</p>
         </div>
     );
 }

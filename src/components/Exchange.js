@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { validate }from '../process';
+import { validate, processResult }from '../process';
 
 export default function Exchange() {
     const [rate, setRate] = useState(0);
@@ -22,13 +22,15 @@ export default function Exchange() {
 
     function submit(event) {
         if (event.key === 'Enter') {
-            setResult(Math.round(validate(event.target.value) * rate));
+            const result = processResult(Math.round(validate(event.target.value) * rate));
+            setResult(result);
         }
     }
 
     function reversedSubmit(event) {
         if (event.key === 'Enter') {
-            setMoney(Math.round(validate(event.target.value) / rate));
+            const money = processResult(Math.round(validate(event.target.value) / rate));
+            setMoney(money);
         }
     }
 

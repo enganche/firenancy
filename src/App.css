@@ -10,6 +10,12 @@
   background-repeat: no-repeat;
 }
 
+table {
+  border: 1px chocolate;
+  background-color: ghostwhite;
+  border-radius: 10px;
+}
+
 nav {
   display: block;
   margin-top: -25px;
