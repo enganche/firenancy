@@ -16,14 +16,14 @@ function App() {
   return (
       <div className = 'App'>
         <BrowserRouter>
-        <nav>
-          <ul className='navbar'>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to="/exchange">Exchange</Link></li>
-            <li><Link to="/interest">Interest</Link></li>
-            <li><Link to="/about">About</Link></li>
-          </ul>   
-        </nav>
+          <nav>
+            <ul className='navbar'>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to="/exchange">Exchange</Link></li>
+              <li><Link to="/interest">Interest</Link></li>
+              <li><Link to="/about">About</Link></li>
+            </ul>   
+          </nav>
           <Routes>
             <Route path = '/' element = {<Home />} />
             <Route path="/exchange" element={<Exchange />} />
