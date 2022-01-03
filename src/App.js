@@ -2,6 +2,7 @@ import Home from './components/Home';
 import Exchange from './components/Exchange';
 import Interest from './components/Interest';
 import About from './components/About';
+import Footer from './components/Footer';
 //import { useState } from 'react';
 import {
   BrowserRouter,
@@ -30,6 +31,7 @@ function App() {
             <Route path="/about" element={<About />} />
           </Routes>
         </BrowserRouter>
+        <Footer />
       </div>
   );
 }

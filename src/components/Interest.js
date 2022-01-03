@@ -38,7 +38,7 @@ export default function Interest() {
             />
             <button className = 'interest' onClick={calculate}>Tính lãi đơn</button>
             <button className = 'interest' onClick={calculate}>Tính lãi kép</button>
-            <h1>{finalMoney}</h1>
+            <p>{finalMoney}</p>
         </div>
     );
 }

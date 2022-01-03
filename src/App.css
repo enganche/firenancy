@@ -2,8 +2,15 @@
   text-align: center;
 }
 
+.home {
+  background-image: url('./assets/banner.png');
+  padding-bottom: 500px;
+  background-size: cover;
+}
+
 nav {
   display: block;
+  margin-top: -25px;
 }
 
 ul {
@@ -20,7 +27,7 @@ li a {
 }
 
 li a:hover {
-  background-color: darkgray;
+  background-color: brown;
 }
 
 div {
@@ -52,6 +59,13 @@ button.interest {
   border-radius: 10px;
   width: 30%;
   margin: 10px;
+}
+
+.footer {
+  color: beige;
+  font-size: smaller;
+  background-color: #282c34;
+  margin-bottom: -25px;
 }
 
 .App-logo {
@@ -92,6 +106,7 @@ button.interest {
 @media only screen and (max-width: 600px) {
   body {
     background-color: lightcoral;
+    color: lightgrey;
     font-size: small;
   }
 

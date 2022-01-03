@@ -3,7 +3,7 @@ const vie = {
         home: 'Trang chủ',
         exchange: 'Đổi tiền',
         interest: 'Lãi suất',
-        about: 'Tôi là ai?',
+        about: 'About',
     },
     header: {
         home: 'Trang chủ',
@@ -21,6 +21,10 @@ export function language(condition) {
         return vie;
     }
     return 'Please choose language';
+}
+
+export function request() {
+
 }
 
 export function validate(value) {
