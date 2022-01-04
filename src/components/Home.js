@@ -21,7 +21,7 @@ export default function Home() {
     return (
         <div className="home">
             <h1>Tỉ giá crypto</h1>
-            <p>(Có vẻ khái sai)</p>
+            <p>(Có vẻ khá sai)</p>
             <table align = 'center' >
                 <tr>
                     <th>Crypto</th>
