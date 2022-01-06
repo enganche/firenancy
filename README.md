@@ -7,10 +7,10 @@ React Library and `freecurrencyapi`
 ## Features
 
 ### List of contents
-1. ![Homepage](#homepage)
-2. ![Exchange](#exchange)
-3. ![Interest](#interest)
-4. ![About](#about)
+1. [Homepage](#homepage)
+2. [Exchange](#exchange)
+3. [Interest](#interest)
+4. [About](#about)
 
 ### Homepage
 A brief introduction about the project and the current price of BTC and ETC in USD (not accurate).
