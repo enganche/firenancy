@@ -4,9 +4,9 @@
 
 React Library and `freecurrencyapi`
 
-## Features
+# Features
 
-### List of contents
+## List of contents
 1. [Homepage](#homepage)
 2. [Exchange](#exchange)
 3. [Interest](#interest)
@@ -23,19 +23,19 @@ Calculate simple interest, compound interest will be add if I want, but now I do
 ### About
 An about page about me
 
-## You can view a demo here
+# You can view a demo here
 
-https://firenancy.netlify.app/
+## https://firenancy.netlify.app/
 
-## To clone this repo
+# To clone this repo
 
 Run these command
 
-`git clone https://github.com/Anhtuanzzz/firenancy.git`
-`cd firenancy`
+## `git clone https://github.com/Anhtuanzzz/firenancy.git`
+## `cd firenancy`
 
-## To install required packages
- `npm install`
+# To install required packages
+## `npm install`
 
-## To start the development server
- `npm start`
+# To start the development server
+## `npm start`
